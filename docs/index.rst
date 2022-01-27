@@ -13,3 +13,7 @@ A *Read the Docs* for my work
    :alt: Documentation Status
 
 Welcome to my personal documentation for my work while at Weber State University. Here you'll find my work pertaining to ECE 1400 Engineering Computinge.
+
+
+.. contents:: Table of Contents
+   :depth: 2
