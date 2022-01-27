@@ -14,7 +14,24 @@ helpstatement = "Hi welcome to cone calc!\nTo get started here the expected inpu
 
 
 def calc(height, radius, area_volume):
-    # print(height, radius, area_volume)
+    """
+    Function returns the requested calculation.
+
+    Parameters
+    ----------
+    height : int or float
+        height component of cone
+    radius : int or float
+        radius component of cone
+    area_volume : string
+        Which calculation to perform with the given parameters
+
+    Return
+    ------
+    int or float
+        Returns the result of th requested calculation
+
+    """
     if area_volume == "area":
         temp = math.pi * radius * (radius + math.sqrt(math.pow(height, 2) + math.pow(radius, 2)))
         print("The surface %s of a cone of radius %f and height %f is: %f" % (area_volume, radius, height, temp))
@@ -23,19 +40,24 @@ def calc(height, radius, area_volume):
         print("The %s of a cone of radius %f and height %f is: %f" % (area_volume, radius, height, temp))
 
 
-try:
-    if type(sys.argv[1]) != "help":
-        try:
-            calc(float(sys.argv[1]), float(sys.argv[2]), sys.argv[3])
-        except ValueError:
-            print("Hmmm... did you mean to type that?\nHere's some help to get started!\n")
+def main():
+    try:
+        if type(sys.argv[1]) != "help":
+            try:
+                calc(float(sys.argv[1]), float(sys.argv[2]), sys.argv[3])
+            except ValueError:
+                print("Hmmm... did you mean to type that?\nHere's some help to get started!\n")
+                print(helpstatement)
+                exit()
+        else:
+            print("Displaying Help:\n")
             print(helpstatement)
             exit()
-    else:
-        print("Displaying Help:\n")
+    except IndexError:
+        print("Hmmm... did you mean to type that?\nHere's some help to get started!\n")
         print(helpstatement)
         exit()
-except IndexError:
-    print("Hmmm... did you mean to type that?\nHere's some help to get started!\n")
-    print(helpstatement)
-    exit()
+
+
+if __name__ == "__main__":
+    main()
