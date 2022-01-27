@@ -24,7 +24,7 @@ copyright = '2022, Jack Fernald'
 author = 'Jack Fernald'
 
 # The full version, including alpha/beta/rc tags
-release = '1'
+#release = '1'
 
 
 # -- General configuration ---------------------------------------------------
