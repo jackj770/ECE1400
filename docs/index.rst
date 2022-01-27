@@ -17,3 +17,4 @@ Welcome to my personal documentation for my work while at Weber State University
 
 .. contents:: Table of Contents
    :depth: 2
+   Homework 1\: Cones, Logics Gates, and Matricies
