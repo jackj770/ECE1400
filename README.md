@@ -1,3 +1,7 @@
+layout: page
+title: "Read Me"
+permalink: /readme
+
 # ECE1400 Jack Fernald 
 ## Weber State University
 
