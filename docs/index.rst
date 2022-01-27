@@ -1,9 +1,10 @@
 .. image:: https://www.weber.edu/wsuimages/brand/logos/wsu/wsu_horiz1.png
-:target: https://weber.edu
-:alt: Weber State Logo
+   :alt: Weber State Logo
+   :target: https://weber.edu
 
-.. title:: Jack Fernald - ECE 1400
-.. subtitle:: A _Read the Docs_ for my work
+.. topic:: Jack Fernald - ECE 1400
+
+A _Read the Docs_ for my work
 
 
 
