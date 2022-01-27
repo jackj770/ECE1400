@@ -2,7 +2,7 @@
    :alt: Weber State Logo
    :target: https://weber.edu
 
-.. topic:: ***Jack Fernald - ECE 1400***
+***Jack Fernald - ECE 1400***
 
 A *Read the Docs* for my work
 
