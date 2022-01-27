@@ -25,6 +25,23 @@ def andgate(x, y):                                  # And Gate
 
 
 def orgate(x, y):                                   # Or Gate
+    """
+    Function returns the union of x and y:
+    if x or y or both are 1 then return true, else false
+
+    Parameters
+    ----------
+    x : bool
+        element one to compare against
+    y : bool
+        element two to compare against
+    
+    Return
+    ------
+    return: boolean
+        The union of x and y 
+
+    """
     return x or y
 
 
