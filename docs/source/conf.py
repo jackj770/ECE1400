@@ -12,7 +12,7 @@
 #
 import os
 import sys
-import sphinx_book_theme
+#import sphinx_book_theme
 sys.path.insert(0, os.path.abspath('../../hw2/logicgates'))
 sys.path.insert(0, os.path.abspath('../../hw2/cone_geometery'))
 sys.path.insert(0, os.path.abspath('../../hw2/Matrix_Multiplication'))
