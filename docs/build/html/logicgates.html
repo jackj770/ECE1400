@@ -187,6 +187,49 @@ if x and y are either 0 or 1 then return true, else false</p>
 <li><p><strong>y</strong> (<em>bool</em>) – element two to compare against</p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>return</strong> – The intersection of x and y</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="logicgates.counttable">
+<span class="sig-prename descclassname"><span class="pre">logicgates.</span></span><span class="sig-name descname"><span class="pre">counttable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">amount</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">binlist</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logicgates.counttable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function returns a list of the next line of a truth table that was passed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>amount</strong> (<em>int</em>) – nth row of a truth table (with x amount of bits)</p></li>
+<li><p><strong>binlist</strong> (<em>list</em>) – The current iteration of the truth table, used to generate the next line.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>return</strong> – The next iteration of the truth table based on the previous row</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="logicgates.notgate">
+<span class="sig-prename descclassname"><span class="pre">logicgates.</span></span><span class="sig-name descname"><span class="pre">notgate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logicgates.notgate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function returns the inverse of x:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>bool</em>) – Value to invert</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>return</strong> – Inverse of x, either true or false</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -207,6 +250,24 @@ if x or y or both are 1 then return true, else false</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="logicgates.truthtablegen">
+<span class="sig-prename descclassname"><span class="pre">logicgates.</span></span><span class="sig-name descname"><span class="pre">truthtablegen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logicgates.truthtablegen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function builds a table based on the in the gate configuration with the help of the counttable function. Does
+this by passing the array from the counttable function into the gate configuration (q).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – Number of times you want the generator to run</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>return</strong> – returns nothing but prints during its cycle</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>null</p>
 </dd>
 </dl>
 </dd></dl>

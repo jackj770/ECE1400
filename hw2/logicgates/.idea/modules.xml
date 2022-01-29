@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Matrix_Multiplication/.idea/Matrix_Multiplication.iml" filepath="$PROJECT_DIR$/../Matrix_Multiplication/.idea/Matrix_Multiplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../cone_geometery/.idea/cone_geometery.iml" filepath="$PROJECT_DIR$/../cone_geometery/.idea/cone_geometery.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/logicgates.iml" filepath="$PROJECT_DIR$/.idea/logicgates.iml" />
     </modules>
   </component>

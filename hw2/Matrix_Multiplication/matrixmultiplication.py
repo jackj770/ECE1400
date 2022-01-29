@@ -11,6 +11,24 @@ matresult = []
 
 
 def creatematricies(m, n, p):
+    """
+        Functions returns a matrix based on the size that user request and populates
+        matrix with user input.
+
+        Parameters
+        ----------
+        m : int or float
+            mth dimension of matrix A and Result Matrix
+        n : int or float
+            nth dimension of matrix A and B
+        p : int or float
+            pth dimension of matrix B and Result Matrix
+
+        Return
+        ------
+        Does not return, uses global variables, my bad
+
+        """
     print("Creating matrix %i x %i" % (m, n))
     for ii in range(m):  # Row in Matrix A
         temp = []
@@ -31,6 +49,23 @@ def creatematricies(m, n, p):
 
 
 def multiply(m, n, p):
+    """
+        Function multiplies the matrices made by the user
+
+        Parameters
+        ----------
+         m : int or float
+            mth dimension of matrix A and Result Matrix
+        n : int or float
+            nth dimension of matrix A and B
+        p : int or float
+            pth dimension of matrix B and Result Matrix
+
+        Return
+        ------
+        Writes values to the global variables, again my bad. Then prints
+
+        """
     running = 0
     for ii in range(m):  # Iterate over A rows
         m1temp = mat1[ii]
@@ -44,15 +79,20 @@ def multiply(m, n, p):
         matresult.append(temp)
 
 
-try:
-    creatematricies(int(sys.argv[1]), int(sys.argv[2]), int((sys.argv[3])))
-except IndexError:
-    print("Unexpected value. Plese Type <m> <n> <p> with your desired values.")
-    exit()
-try:
-    multiply(int(sys.argv[1]), int(sys.argv[2]), int((sys.argv[3])))
-    for ii in range(int(sys.argv[3])):
-        print(matresult[ii])
-except IndexError:
-    print("Unexpected value. Please Type <m> <n> <p> with your desired values.")
-    exit()
+def main():
+    try:
+        creatematricies(int(sys.argv[1]), int(sys.argv[2]), int((sys.argv[3])))
+    except IndexError:
+        print("Unexpected value. Plese Type <m> <n> <p> with your desired values.")
+        exit()
+    try:
+        multiply(int(sys.argv[1]), int(sys.argv[2]), int((sys.argv[3])))
+        for ii in range(int(sys.argv[3])):
+            print(matresult[ii])
+    except IndexError:
+        print("Unexpected value. Please Type <m> <n> <p> with your desired values.")
+        exit()
+
+
+if __name__ == '__main__':
+    main()

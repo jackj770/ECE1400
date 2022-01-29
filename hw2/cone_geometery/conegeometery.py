@@ -6,12 +6,6 @@
 import math
 import sys
 
-height = 1
-radius = 1
-area_volume = "area"
-
-helpstatement = "Hi welcome to cone calc!\nTo get started here the expected inputs:\n <height> <radius> and then 'area' or 'volume' \nfor which calculation you wish to perform"
-
 
 def calc(height, radius, area_volume):
     """
@@ -28,8 +22,7 @@ def calc(height, radius, area_volume):
 
     Return
     ------
-    int or float
-        Returns the result of th requested calculation
+    Does not return, only prints.
 
     """
     if area_volume == "area":
@@ -41,6 +34,20 @@ def calc(height, radius, area_volume):
 
 
 def main():
+    """
+        Main method of the file, catches exceptions and checks for proper input before passing to calc method.
+
+        Parameters
+        ----------
+        No Parameters
+
+        Return
+        ------
+        Does not return
+
+        """
+    helpstatement = "Hi welcome to cone calc!\nTo get started here the expected inputs:\n <height> <radius> and then " \
+                    "'area' or 'volume' \nfor which calculation you wish to perform "
     try:
         if type(sys.argv[1]) != "help":
             try:
