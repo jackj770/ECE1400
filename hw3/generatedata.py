@@ -3,130 +3,116 @@
 # Dr. Eric Gibbons
 # ECE 1400 Engineering Computing
 # Created on February 01, 2022
+import sys
 
 import numpy
 
 
-def generateref(ref, n, write):
-    """
-    Parameters
-    --------
-        n : Desired length of the reference sequence
+class Generate:
+    def __init__(self, ref_file, reads_file):
+        self.f = ref_file
+        self.r = reads_file
+        self.ref = ""
 
-    Return
-    -------
-        return : string
-            The generated length of the reference sequence
-    """
-    randlengen = int(n * 0.75)
-    half = int(n * 0.5)
+    def __exit__(self):
+        self.f.close()
+        self.r.close()
 
-    for x in range(0, randlengen):
-        i = numpy.random.randint(0, 4, None, int)
-        if i == 0:
-            ref += 'A'
-        if i == 1:
-            ref += 'T'
-        if i == 2:
-            ref += 'G'
-        if i == 3:
-            ref += 'C'
+    def generateref(self, n, write):
 
-    if(write):
-        lastfourth = ref[half:randlengen]
-        ref += lastfourth
-
-        f = open("reference0.txt", "w")
-        f.write(ref)
-        f.close()
-    return ref
-
-
-
-def generatereads(n, length):
-    """
+        """
         Parameters
         --------
-            n : Desired amount of reads
-            len : Desired length of individual reads
-            ref : Freshly generated reference list
-
+            n : Desired length of the reference sequence
+    
         Return
         -------
             return : string
                 The generated length of the reference sequence
-    """
-    r = open("reads0.txt", 'a')
-    ref = open("reference0.txt", "r")
+        """
 
-    seq = ref.readline()
-    reflength = len(seq)
-    print(seq)
+        n = int(n)
+        randlengen = int(n)
+        if write:
+            print("reference length: %i" % (n))
+            f = open(self.f, "w")
+            randlengen = int(int(n) * 0.75)
+            half = int(int(n) * 0.5)
 
-    # First half of 50% reads
-    halfref = int(reflength/2)
-    quarterref = int(reflength/4)
+        for x in range(0, randlengen):
+            i = numpy.random.randint(0, 4, None, int)
+            if i == 0:
+                self.ref += 'A'
+            if i == 1:
+                self.ref += 'T'
+            if i == 2:
+                self.ref += 'G'
+            if i == 3:
+                self.ref += 'C'
+        if (write):
+            lastfourth = self.ref[half:randlengen]
+            self.ref += lastfourth
+            f.write(self.ref)
+            f.close()
 
-    majorityreads = int(n * 0.75)
-    doublereads = int(n * 0.1)
-    print(doublereads)
-    print(quarterref)
-    noreads = int(n*0.15)
+    def generatereads(self, n, length):
+        """
+            Parameters
+            --------
+                n : Desired amount of reads
+                len : Desired length of individual reads
+                ref : Freshly generated reference list
+    
+            Return
+            -------
+                return : string
+                    The generated length of the reference sequence
+        """
 
+        f = open(self.f, "r")
+        r = open(self.r, "w")
+        n = int(n)
+        length = int(length)
+        seq = f.read()
+        print("number reads: %i" % (n))
+        print("read length: %i" % (length))
+        reflength = len(seq)
+        print(n)
+        singlereads = int(n * 0.75)
+        doublereads = int(n * 0.1)
+        noreads = int(n * 0.15)
+        print(noreads, singlereads, doublereads)
 
+        # print(noreads, singlereads, doublereads)
 
-
-    # First half of ref
-    # f.write("75% of reads\n")
-    for x in range(0, majorityreads):
-        pos = numpy.random.randint(0, halfref-1)
-        read = seq[pos:pos + length]
-        r.write(read + "\n")
-    # last half
-    # f.write("10% of reads\n")
-    for x in range(0, doublereads):
-        pos = numpy.random.randint(0, quarterref-1)
-        start = pos+halfref
-        read = seq[start:start+length]
-        r.write(read + "\n")
-    # # f.write("15% of reads\n")
-    for x in range(0, noreads):
-        read = ""
-        read = generateref(read, length+2, False)
-        r.write(read + "\n")
-    r.close()
-    ref.close()
-
-
-def detectmatch(n):
-    f = open("reads0.txt",'r')
-    a = open("alignments0.txt",'a')
-    ref = open("reference0.txt", "r")
-    seq = ref.readline()
-
-    for x in range(n):
-        read = f.readline().strip()
-        index = str(seq.find(read, 0, len(seq)))
-        a.write(index + "\n")
-    a.close()
-    f.close()
-    ref.close()
-
+        # First half of ref
+        print("ref", reflength)
+        for x in range(0, singlereads):
+            pos = numpy.random.randint(0, (reflength / 2))
+            read = seq[pos:pos + length]
+            r.write(read + "\n")
+            # print(x)
+        # last half
+        for x in range(0, int(doublereads/2)):
+            pos = numpy.random.randint(0, (reflength / 2))
+            start = int(pos + (reflength / 2))
+            read = seq[start:start + length]
+            r.write(read + "\n")
+            # print(x, read)
+        for x in range(0, noreads):
+            self.ref = ""
+            self.generateref(length, False)
+            r.write(self.ref + "\n")
+            # print(x)
 
 
 def main():
-    with open("reference0.txt", 'w') as f:
-        f.close()
-    with open("reads0.txt", 'w') as f:
-        f.close()
-    with open("alignments0.txt", 'w') as f:
-        f.close()
-
-
-    ref = ""
-    generateref(ref, 100, True)
-    generatereads(60, 5)
-    detectmatch(60)
+    try:
+        newdata = Generate(sys.argv[4], sys.argv[5])
+        newdata.generateref(sys.argv[1], True)
+        newdata.generatereads(sys.argv[2], sys.argv[3])
+    except:
+        print("Usage:\n $ python generatedata.py <ref_length> <nreads> <read_len> <ref_file> <reads_file>\n")
 
 
 if __name__ == "__main__":
