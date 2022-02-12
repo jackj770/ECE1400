@@ -1,0 +1,3 @@
+[submodule "hw4"]
+	path = hw4
+	url = git@github.com:Weber-State-ECE/ece1400-hw04-jackj770.git
