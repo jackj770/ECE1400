@@ -23,8 +23,9 @@ Welcome to my personal documentation for my work while at Weber State University
    :maxdepth: 2
    :caption: Contents:
 
-   logicgates.rst
-   cone.rst
+  logicgates.rst
+  cone.rst
+  custom_numpy.rst
    
 * :ref:`genindex`
 * :ref:`modindex`

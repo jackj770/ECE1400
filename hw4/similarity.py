@@ -178,17 +178,18 @@ class MovieData:
 
 
 def main():
-    try:
-        if len(sys.argv) < 4:
-            movielist = MovieData(sys.argv[1], sys.argv[2], 5, False)
-        elif len(sys.argv) < 5:
-            movielist = MovieData(sys.argv[1], sys.argv[2], sys.argv[3], False)
-        else:  # Verbose mode Enabled
-            movielist = MovieData(sys.argv[1], sys.argv[2], sys.argv[3], True)
-        movielist.run()
-    except IndexError as err:
-        print(err)
-        print("Usage:\n      $python similarity.py <data_file> <output_file> [user_thresh (default = 5)]")
+    movielist = MovieData('u.data', 'sim.txt', 5, True)
+    # try:
+    #     if len(sys.argv) < 4:
+    #         movielist = MovieData(sys.argv[1], sys.argv[2], 5, False)
+    #     elif len(sys.argv) < 5:
+    #         movielist = MovieData(sys.argv[1], sys.argv[2], sys.argv[3], False)
+    #     else:  # Verbose mode Enabled
+    #         movielist = MovieData(sys.argv[1], sys.argv[2], sys.argv[3], True)
+    movielist.run()
+    # except IndexError as err:
+    #     print(err)
+    #     print("Usage:\n      $python similarity.py <data_file> <output_file> [user_thresh (default = 5)]")
 
 
 if __name__ == "__main__":
