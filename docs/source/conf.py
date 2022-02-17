@@ -16,7 +16,7 @@ import sys
 sys.path.insert(0, os.path.abspath('../../hw2/logicgates'))
 sys.path.insert(0, os.path.abspath('../../hw2/cone_geometery'))
 sys.path.insert(0, os.path.abspath('../../hw2/Matrix_Multiplication'))
-sys.path.insert(0, os.path.abspath('../../hw5'))
+sys.path.insert(0, os.path.abspath('../../hw5/'))
 
 
 # -- Project information -----------------------------------------------------

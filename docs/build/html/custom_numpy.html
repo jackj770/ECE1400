@@ -173,8 +173,62 @@
                 
   <div class="section" id="custom-numpy-module-but-just-for-matricies">
 <h1>Custom Numpy Module but Just for Matricies<a class="headerlink" href="#custom-numpy-module-but-just-for-matricies" title="Permalink to this headline">¶</a></h1>
-<p><a href="#id1"><span class="problematic" id="id2">**</span></a>A module for working with matricies **</p>
-<span class="target" id="module-matrix"></span></div>
+<p>A module for working with matricies</p>
+<span class="target" id="module-matrix"></span><dl class="py class">
+<dt class="sig sig-object py" id="matrix.Matrix">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">matrix.</span></span><span class="sig-name descname"><span class="pre">Matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">userMatrix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#matrix.Matrix" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Creates an object for working with lists as matricies</dt><dd><ul class="simple">
+<li><p>Uses +, -, <a href="#id1"><span class="problematic" id="id2">*</span></a>, /, &#64;</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="matrix.Matrix.norm">
+<span class="sig-name descname"><span class="pre">norm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matrix.Matrix.norm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the norm of the Matrix object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The norm of the Matrix object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="matrix.Matrix.reshape">
+<span class="sig-name descname"><span class="pre">reshape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#matrix.Matrix.reshape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reshapes the Matrix object the new dimensions passed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>new_m</strong> (<em>new m</em><em> (</em><em>height</em><em>) </em><em>of the matrix</em>) – </p></li>
+<li><p><strong>new_n</strong> (<em>new n</em><em> (</em><em>width</em><em>) </em><em>of the matrix</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="matrix.Matrix.trace">
+<span class="sig-name descname"><span class="pre">trace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#matrix.Matrix.trace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the trace of the Matrix object. Requires a 1D Matrix Object</p>
+<p>Takes no parameters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The calculated trace of the Matrix object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 
 
               </div>
